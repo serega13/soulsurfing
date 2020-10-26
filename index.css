@@ -76,18 +76,28 @@ header > .responsive {
   transform: scale(0.95)
 }
 
-.video {
-  overflow: hidden;
-  border-radius: 12px;
+.video-aspect {
+  margin: auto;
   position: relative;
-  padding-bottom: 56.25%;
+  max-width: calc((75vh - 90px) * 16 / 9);
+  
   box-shadow: 0 8px 12px -6px #2376F1cc;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.video > iframe {
+.video-aspect::before {
+  content: '';
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+.video-aspect iframe {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
+  
   width: 100%;
   height: 100%;
 }
